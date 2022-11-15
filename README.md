@@ -97,3 +97,12 @@ Request URL Params :
     "month_number": number,
     "year_number": number
 ```
+
+### DELETE /card/:card_number
+
+This api is used to delete all items related to a user card number from the database
+Request URL Params :
+
+```
+    "card_number": number
+```
