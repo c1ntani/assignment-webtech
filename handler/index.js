@@ -272,7 +272,7 @@ const generateHandlers = (database) => {
     if (!date || !moment(date, "DD.MM.YY", true).isValid()) {
       return res.status(400).json({
         error: "failed",
-        message: "Date is invalid or missing !",
+        message: "Date is invalid or missing. Use format DD.MM.YY !",
       });
     }
 
@@ -336,7 +336,7 @@ const generateHandlers = (database) => {
     // Run query to get the 'card_store_id' for the 'card_store' table using 'month' and 'year'
     database.all(
       queries.getCardStoreDetailsByMonthYear,
-      [`__.${month}.${year}`],
+      [`%.${month}.${year}`],
       (err, rows) => {
         // Error handling if unable to get data from database
         if (err) {
